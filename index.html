@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Not A Libra</title>
+  </head>
+<body>
+
+<h1>I'm not a Libra but I'm indecisive</h1>
+
+<p>
+  <label for="newOption">Enter Option</label></br>
+</br>
+  <input id="newOption" value=""></br>
+</br>
+  <button onclick="addOption()">Add</button>
+</p>
+
+<p id="showOptions"></p></br>
+<button onclick="random()">Help Me Choose</button>
+<p id="answer"></p>
+
+<script>
+var options = [];
+
+function addOption() {
+  options.push(" " + document.getElementById("newOption").value);
+  document.getElementById("showOptions").innerHTML = "My options are" + options;
+}
+
+function random() {
+  var randomItem = options[Math.floor(Math.random()*options.length)];
+  document.getElementById("answer").innerHTML = "You should go with" + randomItem;
+}
+
+</script>
+
+</body>
+</html>
